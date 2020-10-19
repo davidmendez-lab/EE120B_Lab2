@@ -17,17 +17,90 @@
 tests = [ 
     {'description': 'This test will run first.',
     'steps': [
-        {'inputs': [('PINA',0x01)], 'iterations': 1 } ], 'expected': [('PORTB',0x01)],
+        {'inputs': [('PINA',0x0F)], 'iterations': 1 } ], 'expected': [('PORTC',0x00)],
     },
     {'description': 'This test will run second.',
       'steps': [ 
-        # {'inputs': [('PINA', 0x01)], 'iterations': 1, 'expected': [('PORTB',0x01)]},
-        {'inputs': [('PINA',0x00)], 'iterations': 1} ], 'expected': [('PORTB',0x00)],    
+        # {'inputs': [('PINA', 0x0F)], 'iterations': 1, 'expected': [('PORTC',0x00)]},
+        {'inputs': [('PINA',0x0E)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],    
       },
+    {'description': 'This test will run third.',
+      'steps': [
+        # {'inputs': [('PINA',0x0E)], 'iterations': 1, 'expected': [('PORTC',0x01)]},
+         {'inputs': [('PINA',0x0D)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+    },
+    {'description': 'This test will run fourth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x0D)],'iterations': 1, 'expected': [('PORTC',0x01)]},
+         {'inputs': [('PINA',0x0C)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+      },
+      {'description': 'This test will run fifth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x0C)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x0B)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+      },
+      {'description': 'This test will run sixth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x0B)], 'iterations': 1, 'expected': [('PORTC',0x01)]},
+         {'inputs': [('PINA',0x0A)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+      },
+{'description': 'This test will run seventh.',
+      'steps': [
+        # {'inputs': [('PINA', 0x0A)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x09)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+      },
+{'description': 'This test will run eighth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x09)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x08)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+      },
+{'description': 'This test will run ninth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x08)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
+         {'inputs': [('PINA',0x07)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+      },
+{'description': 'This test will run tenth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x07)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x06)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+      },
+{'description': 'This test will run eleventh.',
+      'steps': [
+        # {'inputs': [('PINA', 0x06)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x05)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+      },
+{'description': 'This test will run twielve.',
+      'steps': [
+        # {'inputs': [('PINA', 0x05)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x04)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+      },
+{'description': 'This test will run thirteenth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x04)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
+         {'inputs': [('PINA',0x03)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+      },
+{'description': 'This test will run fourteenth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x03)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
+         {'inputs': [('PINA',0x02)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+      },
+{'description': 'This test will run fiveteenth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x02)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
+         {'inputs': [('PINA',0x01)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+      },
+{'description': 'This test will run sixteenth.',
+      'steps': [
+        # {'inputs': [('PINA', 0x01)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
+         {'inputs': [('PINA',0x00)], 'iterations': 1} ], 'expected': [('PORTC',0x04)],
+      },
+
       ]
+
+
 
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
-watch = ['main::PINA','PORTB']
+watch = ['main::PINA','PORTC']
 
