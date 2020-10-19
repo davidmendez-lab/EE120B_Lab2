@@ -22,7 +22,7 @@ tests = [
     {'description': 'This test will run second.',
       'steps': [ 
         # {'inputs': [('PINA', 0x0F)], 'iterations': 1, 'expected': [('PORTC',0x00)]},
-        {'inputs': [('PINA',0x0E)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],    
+        {'inputs': [('PINA',0x0E)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],       
       },
     {'description': 'This test will run third.',
       'steps': [
