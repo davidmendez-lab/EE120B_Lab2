@@ -14,85 +14,88 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
+
+#These tests will go from 15 to 0 in binary and depending how many 0'are in each binary number
+#will determine how many free spots the parking lot will have at all possible scenarios
 tests = [ 
-    {'description': 'This test will run first.',
-    'steps': [
-        {'inputs': [('PINA',0x0F)], 'iterations': 1 } ], 'expected': [('PORTC',0x00)],
+     {'description': 'This test will run first.',
+     'steps': [
+        {'inputs': [('PINA',0x0F)], 'iterations': 1} ], 'expected': [('PORTC',0x80)],
     },
-    {'description': 'This test will run second.',
+     {'description': 'This test will run second.',
       'steps': [ 
         # {'inputs': [('PINA', 0x0F)], 'iterations': 1, 'expected': [('PORTC',0x00)]},
         {'inputs': [('PINA',0x0E)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],       
-      },
+     },
     {'description': 'This test will run third.',
       'steps': [
         # {'inputs': [('PINA',0x0E)], 'iterations': 1, 'expected': [('PORTC',0x01)]},
-         {'inputs': [('PINA',0x0D)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+        {'inputs': [('PINA',0x0D)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
     },
     {'description': 'This test will run fourth.',
       'steps': [
         # {'inputs': [('PINA', 0x0D)],'iterations': 1, 'expected': [('PORTC',0x01)]},
-         {'inputs': [('PINA',0x0C)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-      },
+        {'inputs': [('PINA',0x0C)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+    },
       {'description': 'This test will run fifth.',
       'steps': [
         # {'inputs': [('PINA', 0x0C)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x0B)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+        {'inputs': [('PINA',0x0B)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
       },
       {'description': 'This test will run sixth.',
       'steps': [
         # {'inputs': [('PINA', 0x0B)], 'iterations': 1, 'expected': [('PORTC',0x01)]},
-         {'inputs': [('PINA',0x0A)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+        {'inputs': [('PINA',0x0A)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
       },
-{'description': 'This test will run seventh.',
+    {'description': 'This test will run seventh.',
       'steps': [
         # {'inputs': [('PINA', 0x0A)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x09)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+        {'inputs': [('PINA',0x09)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
       },
-{'description': 'This test will run eighth.',
+    {'description': 'This test will run eighth.',
       'steps': [
         # {'inputs': [('PINA', 0x09)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x08)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+        {'inputs': [('PINA',0x08)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
       },
-{'description': 'This test will run ninth.',
+    {'description': 'This test will run ninth.',
       'steps': [
         # {'inputs': [('PINA', 0x08)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-         {'inputs': [('PINA',0x07)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+        {'inputs': [('PINA',0x07)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
       },
-{'description': 'This test will run tenth.',
+    {'description': 'This test will run tenth.',
       'steps': [
         # {'inputs': [('PINA', 0x07)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x06)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+        {'inputs': [('PINA',0x06)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
       },
-{'description': 'This test will run eleventh.',
+    {'description': 'This test will run eleventh.',
       'steps': [
         # {'inputs': [('PINA', 0x06)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x05)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+        {'inputs': [('PINA',0x05)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
       },
-{'description': 'This test will run twielve.',
+    {'description': 'This test will run tweleve.',
       'steps': [
         # {'inputs': [('PINA', 0x05)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x04)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+        {'inputs': [('PINA',0x04)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
       },
-{'description': 'This test will run thirteenth.',
+    {'description': 'This test will run thirteenth.',
       'steps': [
         # {'inputs': [('PINA', 0x04)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-         {'inputs': [('PINA',0x03)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
+        {'inputs': [('PINA',0x03)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
       },
-{'description': 'This test will run fourteenth.',
+    {'description': 'This test will run fourteenth.',
       'steps': [
         # {'inputs': [('PINA', 0x03)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-         {'inputs': [('PINA',0x02)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+        {'inputs': [('PINA',0x02)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
       },
-{'description': 'This test will run fiveteenth.',
+    {'description': 'This test will run fiveteenth.',
       'steps': [
         # {'inputs': [('PINA', 0x02)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-         {'inputs': [('PINA',0x01)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
+        {'inputs': [('PINA',0x01)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
       },
-{'description': 'This test will run sixteenth.',
+    {'description': 'This test will run sixteenth.',
       'steps': [
         # {'inputs': [('PINA', 0x01)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-         {'inputs': [('PINA',0x00)], 'iterations': 1} ], 'expected': [('PORTC',0x04)],
+        {'inputs': [('PINA',0x00)], 'iterations': 1} ], 'expected': [('PORTC',0x04)],
       },
 
       ]

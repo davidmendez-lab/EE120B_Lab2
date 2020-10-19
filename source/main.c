@@ -23,29 +23,28 @@ int main(void)
 	unsigned char cntavail;
     	while (1)
 		{
-		if(PINA == 0x00)
+		if(PINA == 0x00) //when all sopts are free
 			{
 			cntavail = 0x04;
 			}
-		else if((PINA == 0x01) || (PINA == 0x02) || (PINA == 0x04) || (PINA == 0x08))
+		else if((PINA == 0x01) || (PINA == 0x02) || (PINA == 0x04) || (PINA == 0x08)) //when 1 spot is filled
 			{
 			cntavail = 0x03;
 			}
-		else if((PINA == 0x07) || (PINA == 0x0B) || (PINA == 0x0D) || (PINA == 0x0E))
+		else if((PINA == 0x07) || (PINA == 0x0B) || (PINA == 0x0D) || (PINA == 0x0E)) //when 3 spots are filled
 			{
 			cntavail = 0x01;
 			}
-		else if(PINA == 0x0F)
+		else if (PINA == 0x0F) //when all spots filled port C7 is turned to 1
 			{
-			cntavail = 0x00;
+			cntavail = 0x80;
+			//when all spots are filled Port C7 is turned to 1
 			}
-		else
+		else //when 2 spots are filled
 			{
 			cntavail = 0x02;
 			}
-		PORTC = cntavail;
+			PORTC = cntavail;
 		}
-		
    return 1;    
-
 }
