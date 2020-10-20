@@ -18,92 +18,25 @@
 #These tests will go from 15 to 0 in binary and depending how many 0'are in each binary number
 #will determine how many free spots the parking lot will have at all possible scenarios
 tests = [ 
-     {'description': 'This test will run first.',
+     {'description': 'This test will run first.', #extreme case where PORTA and PORTC have max weight but nothing on PORTB
      'steps': [
-        {'inputs': [('PINA',0x0F)], 'iterations': 1} ], 'expected': [('PORTC',0x80)],
+         {'inputs': [('PINA',0xFF),('PINB',0x00),('PINC',0xFF)],'iterations': 1} ], 'expected': [('PORTD',0xF9)],
     },
-     {'description': 'This test will run second.',
+     {'description': 'This test will run second.',#extreme case where nobody is in any seat making the total weight 0 kg
       'steps': [ 
-        # {'inputs': [('PINA', 0x0F)], 'iterations': 1, 'expected': [('PORTC',0x00)]},
-        {'inputs': [('PINA',0x0E)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],       
+        {'inputs': [('PINA',0x00),('PINB',0x00),('PINC',0x00)], 'iterations': 1} ], 'expected': [('PORTD',0x00)],       
      },
-    {'description': 'This test will run third.',
+    {'description': 'This test will run third.',#middle case where people are on board but no rules are broken
       'steps': [
-        # {'inputs': [('PINA',0x0E)], 'iterations': 1, 'expected': [('PORTC',0x01)]},
-        {'inputs': [('PINA',0x0D)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
+        {'inputs': [('PINA',0x3F),('PINB',0x0F),('PINC',0xF0)], 'iterations': 1} ], 'expected': [('PORTD',0xFA)],
     },
-    {'description': 'This test will run fourth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x0D)],'iterations': 1, 'expected': [('PORTC',0x01)]},
-        {'inputs': [('PINA',0x0C)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-    },
-      {'description': 'This test will run fifth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x0C)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x0B)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
-      },
-      {'description': 'This test will run sixth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x0B)], 'iterations': 1, 'expected': [('PORTC',0x01)]},
-        {'inputs': [('PINA',0x0A)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-      },
-    {'description': 'This test will run seventh.',
-      'steps': [
-        # {'inputs': [('PINA', 0x0A)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x09)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-      },
-    {'description': 'This test will run eighth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x09)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x08)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
-      },
-    {'description': 'This test will run ninth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x08)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-        {'inputs': [('PINA',0x07)], 'iterations': 1} ], 'expected': [('PORTC',0x01)],
-      },
-    {'description': 'This test will run tenth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x07)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x06)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-      },
-    {'description': 'This test will run eleventh.',
-      'steps': [
-        # {'inputs': [('PINA', 0x06)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x05)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-      },
-    {'description': 'This test will run tweleve.',
-      'steps': [
-        # {'inputs': [('PINA', 0x05)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x04)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
-      },
-    {'description': 'This test will run thirteenth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x04)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-        {'inputs': [('PINA',0x03)], 'iterations': 1} ], 'expected': [('PORTC',0x02)],
-      },
-    {'description': 'This test will run fourteenth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x03)], 'iterations': 1, 'expected': [('PORTC',0x02)]},
-        {'inputs': [('PINA',0x02)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
-      },
-    {'description': 'This test will run fiveteenth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x02)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-        {'inputs': [('PINA',0x01)], 'iterations': 1} ], 'expected': [('PORTC',0x03)],
-      },
-    {'description': 'This test will run sixteenth.',
-      'steps': [
-        # {'inputs': [('PINA', 0x01)], 'iterations': 1, 'expected': [('PORTC',0x03)]},
-        {'inputs': [('PINA',0x00)], 'iterations': 1} ], 'expected': [('PORTC',0x04)],
-      },
-
-      ]
-
-
+    
+    ]
 
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
-watch = ['main::PINA','PORTC']
+watch = ['main::PINA,PINB,PINC','PORTD']
+#reference statement
+ # {'inputs': [('PINA',0x0E)], 'iterations': 1, 'expected': [('PORTC',0x01)]}
 
